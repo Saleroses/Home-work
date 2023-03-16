@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
 import {constants} from "os";
-import priority = module
+
 
 /*
 * 1 - описать типы AffairPriorityType, AffairType +++
@@ -51,13 +51,18 @@ export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<Aff
     return affairs.filter(del => del._id !== _id);
 }
 
+function deleteAffairs(affairs: Array<AffairType>, id: any) {
+    return undefined;
+}
+
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState <Array<AffairType>>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => { // need to fix any
-        // need to fix
+    const deleteAffairCallback = (_id: number) => { // need to fix any
+        return setAffairs(deleteAffair(affairs, _id))
+
     }
 
     return (
