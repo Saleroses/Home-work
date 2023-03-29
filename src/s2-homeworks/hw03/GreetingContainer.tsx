@@ -1,14 +1,22 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 type GreetingContainerPropsType = {
     users: Array<UserType>
-    addUserCallback: any // need to fix any
+    addUserCallback: (name: string) => void
 }
 
-export const pureAddUser = (name: any, setError: any, setName: any, addUserCallback: any) => {
+export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
+    if (name === '') {
+        return error
+    } else {
+        addUserCallback(name)
+        setName(name)
+    }
 }
 
 export const pureOnBlur = (name: any, setError: any) => { // если имя пустое - показать ошибку
@@ -26,8 +34,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     addUserCallback,
 }) => {
     // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>('') // need to fix any
+    const [error, setError] = useState<string>('enter name!') // need to fix any
 
     const setNameCallback = (e: any) => { // need to fix any
         setName('some name') // need to fix
