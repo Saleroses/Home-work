@@ -21,7 +21,7 @@ const Stand = () => {
                         onChange={(e) => setValue(e.currentTarget.value)}
                     />
                 </div>
-                {/*инпут с ошибкой:*/}
+                {error}
                 <div>
                     <SuperInputText
                         id={'hw4-super-input-with-error'}
@@ -41,19 +41,19 @@ const Stand = () => {
             </div>
 
             <div className={s.buttons}>
-                {/*обычная кнопка:*/}
+                {s.default}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
                         default
                     </SuperButton>
                 </div>
-                {/*красная кнопка:*/}
+                {s.red}
                 <div>
                     <SuperButton id={'hw4-super-button-red'} xType={'red'}>
                         red
                     </SuperButton>
                 </div>
-                {/*задизэйбленная кнопка:*/}
+                {s.disabled}
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
@@ -63,7 +63,7 @@ const Stand = () => {
                         disabled
                     </SuperButton>
                 </div>
-                {/*задизэйбленная кнопка:*/}
+                {s.disabled}
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
