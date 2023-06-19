@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
-import {log} from "util";
+import {blue} from "@mui/material/colors";
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
@@ -75,18 +75,20 @@ function Clock() {
 
             <div className={s.buttonsContainer}>
                 <SuperButton
+                    className={s.button}
                     id={'hw9-button-start'}
                     disabled={isSetInterval ? true:false} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
-                    start
+                    Start
                 </SuperButton>
                 <SuperButton
+                    className={s.button}
                     id={'hw9-button-stop'}
                     disabled={isSetInterval ? false:true} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
-                    stop
+                    Stop
                 </SuperButton>
             </div>
         </div>

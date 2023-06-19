@@ -1,14 +1,56 @@
 .buttonsContainer {
+
+
 }
 
 .clock {
+    font-size: 30px;
+    margin-top: 50px;
+    font-family: Helvetica;
 }
 
 .watch {
+
 }
 
 .watch strong {
+
 }
 
 .more {
+    font-size: 20px;
+    color: gray;
+    font-style: inherit;
+}
+
+.button {
+    height: 40px;
+    width: 100px;
+    margin: 30px 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    transition: box-shadow 0.2s;
+    border-radius: 5px;
+}
+
+.button:disabled {
+    background-color: lightsteelblue;
+    border-color: #eee;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    transition: all 0.2s;
+    box-shadow: 0 7px 14px rgb(65 132 144 / 15%), 0 3px 6px rgb(0 0 0 / 10%);
 }
